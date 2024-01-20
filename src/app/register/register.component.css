@@ -1,0 +1,43 @@
+.registerForm {
+    margin: 100px;
+    border: 1px solid #95c095;
+
+    border-radius: 20px;
+    width: 800px;
+
+    padding: 30px;
+}
+
+.formContainer {
+    /* width: 100%; */
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+}
+
+.signUpAs{
+    color: rgb(0, 148, 0);
+    text-decoration: none;
+}
+.signUpAs:hover{
+    text-decoration: underline;
+    cursor: pointer;
+    color: rgb(0, 233, 0);
+}
+
+.green {
+    background-color: rgb(0, 161, 0);
+    border-radius: 20px;
+    color: white;
+    /* width: 150px; */
+}
+
+input{
+    border: 2px solid hsl(120, 15%, 81%)
+}
+
+input:hover{
+    border: 2px solid hsl(120, 15%, 71%)
+    
+}
+

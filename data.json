@@ -1,0 +1,93 @@
+{
+  "users": [
+    {
+      "id": "9025",
+      "name": "kai",
+      "email": "kai@gmail",
+      "pass": "kai",
+      "events": [
+        "2d0d",
+        "89f0",
+        "8773",
+        "0ed9",
+        "7a89"
+      ]
+    },
+    {
+      "id": "1c31",
+      "name": "jatin",
+      "email": "jg@gmail",
+      "pass": "jg123",
+      "events": [
+        "2d0d",
+        "89f0"
+      ]
+    }
+  ],
+  "organizations": [
+    {
+      "id": "6321",
+      "name": "Cognizant",
+      "email": "cts@gmail",
+      "pass": "cts"
+    },
+    {
+      "id": "71d4",
+      "name": "Amazon",
+      "email": "am@gmail.com",
+      "pass": "a123"
+    }
+  ],
+  "events": [
+    {
+      "id": "2d0d",
+      "company": "Cognizant",
+      "eventName": "Charity Event",
+      "eventDate": "2024-01-19",
+      "location": "Hyderabad DLF",
+      "startTime": "14:23",
+      "endTime": "17:23",
+      "seats": 20
+    },
+    {
+      "id": "89f0",
+      "company": "Cognizant",
+      "eventName": "Playground",
+      "eventDate": "2024-01-18",
+      "location": "Chandigarh",
+      "startTime": "13:33",
+      "endTime": "15:33",
+      "seats": 15
+    },
+    {
+      "id": "8773",
+      "company": "Cognizant",
+      "eventName": "Football",
+      "eventDate": "2024-01-18",
+      "location": "Mohali",
+      "startTime": "13:34",
+      "endTime": "21:34",
+      "seats": 34
+    },
+    {
+      "id": "0ed9",
+      "company": "Cognizant",
+      "eventName": "cricket",
+      "eventDate": "2024-01-19",
+      "location": "pkl",
+      "startTime": "14:15",
+      "endTime": "16:15",
+      "seats": 15
+    },
+    {
+      "id": "7a89",
+      "company": "",
+      "eventName": "event",
+      "eventDate": "2024-01-19",
+      "location": "blr",
+      "startTime": "08:24",
+      "endTime": "10:24",
+      "seats": 2
+    }
+  ]
+}

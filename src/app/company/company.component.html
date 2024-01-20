@@ -1,0 +1,23 @@
+<div class="d-flex flex-column">
+
+    <!-- <div class="mx-2">
+        <h2 >Your Events</h2>
+    </div> -->
+
+    <nav class="d-flex justify-content-between">
+        <div class="mx-4 navlinks">
+            <a type="button" class=" p-4 eventsbtn" autocomplete="off" data-bs-toggle="button"
+                aria-pressed="true" (click)="onPastEvents()">Past Events</a>
+            <a class=" p-4 eventsbtn" (click)="onUpcomingEvents()">Upcoming Events</a>
+            <a class=" p-4 eventsbtn" (click)="onOngoingEvents()">Ongoing Events</a>
+        </div>
+
+        <div class="mx-5">
+            <button class="btn green mt-3" (click)="createNewEvent()">Create New Event</button>
+        </div>
+    </nav>
+
+    <div>
+        <app-events></app-events>
+    </div>
+</div>

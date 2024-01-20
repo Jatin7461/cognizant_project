@@ -1,0 +1,139 @@
+<div class="formContainer">
+
+    <div class="registerForm" *ngIf="signUpFlag()">
+
+
+        <form [formGroup]="SignUpDetails" (ngSubmit)="onSignUp()">
+
+            <div class="d-flex flex-column align-items-center">
+                <h3 class="my-2">Create an Account</h3>
+
+
+                <div class="form-group col-12 py-4">
+
+                    <!-- <label class="form-label">{{signUpAs()}} Name</label> -->
+                    <div>
+                        <input type="text" class="form-control" formControlName="name" placeholder="Organization Name">
+                    </div>
+
+                </div>
+                <div class="form-group col-12 pb-4">
+
+                    <!-- <label class="form-label">Email</label> -->
+                    <div>
+                        <input type="text" class="form-control" formControlName="email" placeholder="Email">
+                    </div>
+
+                </div>
+
+
+                <div class="form-group col-12 pb-4">
+
+                    <!-- <label class="form-label">Password</label> -->
+                    <div>
+                        <input type="password" class="form-control" formControlName="pass" placeholder="Password">
+
+                    </div>
+
+                </div>
+
+                <div class="form-group col-12 pb-4">
+
+                    <!-- <label class="form-label">Password</label> -->
+                    <div>
+                        <input type="password" class="form-control" formControlName="pass"
+                            placeholder="Confirm Password">
+
+                    </div>
+
+                </div>
+                <button class="btn green mb-4 col-12">Sign Up</button>
+
+                <a class="link signUpAs" (click)="changeSignUpAs()">Sign up as User</a>
+
+
+                <div class="mt-2">
+                    Already have an account?
+                     <a class="link signUpAs">Sign In</a>
+                </div>
+            </div>
+        </form>
+
+
+
+    </div>
+
+
+
+
+    <!-- User Registration Form -->
+    <div class="registerForm" *ngIf="!signUpFlag()">
+
+        <form [formGroup]="userSignUpDetails" (ngSubmit)="onSignUp()">
+        
+            <div class="d-flex flex-column align-items-center">
+                <h3 class="my-2">Create an Account</h3>
+        
+        
+                <div class="row d-flex justify-content-between col-12 py-4">
+
+                    <div class="form-group col-5 p-0">
+                        
+                        <!-- <label class="form-label">{{signUpAs()}} Name</label> -->
+                        <div>
+                            <input type="text" class="form-control" formControlName="FirstName" placeholder="First Name">
+                        </div>
+                        
+                    </div>
+                    <div class="form-group col-5 p-0">
+                        
+                        <!-- <label class="form-label">Email</label> -->
+                        <div>
+                            <input type="text" class="form-control" formControlName="LastName" placeholder="Last Name">
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+
+                <div class="form-group col-12 pb-4">
+
+                    <div>
+                        <input type="email" class="form-control" formControlName="email" placeholder="Email"> 
+                    </div>
+
+                </div>
+        
+                <div class="form-group col-12 pb-4">
+        
+                    <!-- <label class="form-label">Password</label> -->
+                    <div>
+                        <input type="password" class="form-control" formControlName="pass" placeholder="Password">
+        
+                    </div>
+        
+                </div>
+        
+                <div class="form-group col-12 pb-4">
+        
+                    <!-- <label class="form-label">Password</label> -->
+                    <div>
+                        <input type="password" class="form-control" formControlName="pass" placeholder="Confirm Password">
+        
+                    </div>
+        
+                </div>
+                <button class="btn green mb-4 col-12">Sign Up</button>
+        
+                <a class="link signUpAs" (click)="changeSignUpAs()">Sign up as Organization</a>
+        
+        
+                <div class="mt-2">
+                    Already have an account?
+                    <a class="link signUpAs">Sign In</a>
+                </div>
+            </div>
+        </form>
+
+    </div>
+</div>

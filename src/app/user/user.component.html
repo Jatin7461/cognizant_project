@@ -1,0 +1,34 @@
+<nav class="navbar bg-light">
+
+    <div>
+        <a class="btn" (click)="onYourEvents()">Your Events</a>
+        <a class="btn" (click)="onUpcomingEvents()">Upcoming events</a>
+    </div>
+
+</nav>
+
+<div *ngIf="yourEvents" class="d-flex my-5">
+
+    @for(event of userEvents();track event){
+
+
+    <app-event [eventName]="event['eventName']" [date]="event['eventDate']" [startTime]="event['startTime']"
+        [endTime]="event['endTime']" [seats]="event['seats']" [id]="event['id']" [showJoinButton]=false></app-event>
+    }
+    @empty{
+    <p>No events to show.</p>
+    }
+
+</div>
+
+
+<div *ngIf="upcomingEvents" class="d-flex mx-5 my-5">
+    @for(event of OrgEvents();track event){
+
+    <app-event [eventName]="event['eventName']" [date]="event['eventDate']" [startTime]="event['startTime']"
+        [endTime]="event['endTime']" [seats]="event['seats']" [eventId]="event['id']" [showJoinButton]=true></app-event>
+    }
+    @empty{
+    <p>No upcoming events to show.</p>
+    }
+</div>

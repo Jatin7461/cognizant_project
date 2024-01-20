@@ -1,0 +1,60 @@
+<div class="mx-6" style="background-color: rgb(255, 254, 246);">
+
+
+    <div *ngIf="showPastEvents()" class="d-flex mx-4 my-2 py-4 flex-wrap">
+        <!-- 
+        <p *ngIf="pastEvents()">No Past Events to show.</p>
+        <div *ngIf="!pastEvents()">
+            <app-event></app-event>
+        </div> -->
+        @for(event of pastEventsList; track event.eventName){
+        <!-- <app-event></app-event> -->
+        <app-event [eventName]="event['eventName']" [date]="event['eventDate']" [startTime]="event['startTime']"
+            [endTime]="event['endTime']" [seats]="event['seats']" [eventId]="event['id']" [showJoinButton]="false"></app-event>
+        }
+        @empty{
+
+        <p>No Past Events to show.</p>
+        }
+    </div>
+
+    <div *ngIf="showUpcomingEvents()" class="d-flex mx-4 my-2 py-4 flex-wrap">
+
+        <!-- <p *ngIf="upcomingEvents()">No Upcoming Events to show.</p>
+        
+        <div *ngIf="!upcomingEvents()">
+            
+            there are upcoming events
+            
+        </div> -->
+
+        @for(event of upcomingEventsList; track event.eventName){
+        <!-- <app-event></app-event> -->
+        <app-event [eventName]="event['eventName']" [date]="event['eventDate']" [startTime]="event['startTime']"
+            [endTime]="event['endTime']" [seats]="event['seats']" [eventId]="event['id']" [showJoinButton]=false></app-event>
+        }
+        @empty{
+
+        <p>No Upcoming Events to show.</p>
+        }
+    </div>
+
+
+    <div *ngIf="showOngoingEvents()" class="d-flex mx-4 my-2 py-4 flex-wrap">
+
+        <!-- <p *ngIf="ongoingEvents()">No Ongoing Events to show.</p>
+        <div *ngIf="!ongoingEvents()">
+            there are ongoing events
+        </div> -->
+
+        @for(event of ongoingEventsList; track event.eventName){
+        <!-- <app-event></app-event> -->
+        <app-event [eventName]="event['eventName']" [date]="event['eventDate']" [startTime]="event['startTime']"
+            [endTime]="event['endTime']" [seats]="event['seats']" [eventId]="event['id']" [showJoinButton]="false"></app-event>
+        }
+        @empty{
+
+        <p>No Ongoing Events to show.</p>
+        }
+    </div>
+</div>
