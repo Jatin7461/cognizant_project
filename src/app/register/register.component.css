@@ -15,11 +15,12 @@
     /* align-items: center; */
 }
 
-.signUpAs{
+.signUpAs {
     color: rgb(0, 148, 0);
     text-decoration: none;
 }
-.signUpAs:hover{
+
+.signUpAs:hover {
     text-decoration: underline;
     cursor: pointer;
     color: rgb(0, 233, 0);
@@ -32,12 +33,24 @@
     /* width: 150px; */
 }
 
-input{
+input {
     border: 2px solid hsl(120, 15%, 81%)
 }
 
-input:hover{
+input:hover {
     border: 2px solid hsl(120, 15%, 71%)
-    
 }
 
+
+input.ng-invalid.ng-touched {
+    border: 1px solid rgba(255, 0, 0, 1);
+}
+
+input:focus {
+    border: 1px blue solid;
+}
+
+small {
+    font-size: 13px;
+    color: rgba(255, 0, 0, 1);
+}

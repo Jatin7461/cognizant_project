@@ -36,6 +36,7 @@ export class CompanyComponent implements OnInit{
   
   //executes when create new event is clicked
   createNewEvent(){
+    this.navigateService.editEvent.set(false);
     this.router.navigate(['create-event'])
   }
 

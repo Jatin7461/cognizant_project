@@ -15,27 +15,31 @@ export class EventsComponent implements OnInit, OnDestroy {
   showUpcomingEvents = signal(false);
   showOngoingEvents = signal(false);
 
+  pel: any = []
+  uel: any = []
+  oel: any = []
+
 
   //lists of events
-  pastEventsList: any = []
-  upcomingEventsList: any = []
-  ongoingEventsList: any = []
+  pastEventsList: any = signal([])
+  upcomingEventsList: any = signal([])
+  ongoingEventsList: any = signal([])
 
-  constructor(private navigateService: NavigateService, private dataService: DataService) { }
+  constructor(public navigateService: NavigateService, private dataService: DataService) { }
   ngOnDestroy(): void {
     // throw new Error('Method not implemented.');
-    this.navigateService.pastEventsList = [];
-    this.navigateService.ongoingEventsList = [];
-    this.navigateService.upcomingEventsList = [];
+    // this.navigateService.pastEventsList.set([]);
+    // this.navigateService.ongoingEventsList.set([]);
+    // this.navigateService.upcomingEventsList.set([]);
     console.log('on destroy called')
   }
 
   ngOnInit(): void {
     // throw new Error('Method not implemented.');
 
-    this.pastEventsList = []
-    this.upcomingEventsList = []
-    this.ongoingEventsList = []
+    this.pastEventsList.set([])
+    this.upcomingEventsList.set([])
+    this.ongoingEventsList.set([])
 
     this.showPastEvents = this.navigateService.showPastEvents
     this.showUpcomingEvents = this.navigateService.showUpcomingEvents
@@ -45,8 +49,11 @@ export class EventsComponent implements OnInit, OnDestroy {
     this.dataService.getEvents().subscribe({
       next: (res) => {
         console.log(res);
-        let currDate = new Date().toISOString().slice(0, 10);
 
+        let pastList = []
+        let upcomingList = []
+        let ongoingList = []
+        let currDate = new Date().toISOString().slice(0, 10);
         for (let event of res) {
           // console.log(event);
           if (event.eventDate === currDate) {
@@ -55,37 +62,56 @@ export class EventsComponent implements OnInit, OnDestroy {
             let status: string = this.calculateTime(event);
             console.log(event.eventName, status)
             if (status === 'ongoing') {
-              this.navigateService.ongoingEventsList.push(event);
+              // this.navigateService.ongoingEventsList.set(this.navigateService.ongoingEventsList().push(event));
+              // this.navigateService.ongoingEventsList.push(event);
+              ongoingList.push(event)
             }
             else if (status === 'past') {
 
-              this.navigateService.pastEventsList.push(event);
+              // this.navigateService.pastEventsList.set(this.navigateService.pastEventsList().push(event));
+              pastList.push(event)
+              // this.navigateService.pastEventsList.push(event);
             }
             else {
-              this.navigateService.upcomingEventsList.push(event);
+              // this.navigateService.upcomingEventsList.set(this.navigateService.upcomingEventsList().push(event));
+              upcomingList.push(event)
+              // this.navigateService.upcomingEventsList.push(event);
             }
 
 
 
           }
           else if (event.eventDate >= currDate) {
-            this.navigateService.upcomingEventsList.push(event);
+            // this.navigateService.upcomingEventsList.set(this.navigateService.upcomingEventsList().push(event));
+            upcomingList.push(event)
+            // this.navigateService.upcomingEventsList.push(event);
           }
           else {
-            this.navigateService.pastEventsList.push(event)
+            // this.navigateService.pastEventsList.set(this.navigateService.pastEventsList().push(event));
+            pastList.push(event)
+            // this.navigateService.pastEventsList.push(event)
           }
 
         }
 
-        console.log('past events', this.navigateService.pastEventsList);
 
-        console.log('upcoming events', this.navigateService.upcomingEventsList);
-        console.log('ongoing events', this.navigateService.ongoingEventsList);
 
         this.pastEventsList = this.navigateService.pastEventsList
         this.upcomingEventsList = this.navigateService.upcomingEventsList
         this.ongoingEventsList = this.navigateService.ongoingEventsList
 
+
+        // this.pastEventsList.set(pastList)
+        // this.upcomingEventsList.set(upcomingList)
+        // this.ongoingEventsList.set(ongoingList)
+
+        this.uel = upcomingList
+        this.pel = pastList
+        this.oel = ongoingList
+
+        this.navigateService.uel = this.uel
+        this.navigateService.pel = this.pel
+        this.navigateService.oel = this.oel
       },
       error: (err) => {
         console.log(err);
@@ -119,7 +145,7 @@ export class EventsComponent implements OnInit, OnDestroy {
     else if (currTime.length == 0)
       currTime = "0000"
 
-    
+
     console.log('times', currTime, start, end);
     if (currTime <= end && currTime >= start)
       return 'ongoing'

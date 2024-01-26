@@ -18,10 +18,28 @@
       "name": "jatin",
       "email": "jg@gmail",
       "pass": "jg123",
-      "events": [
-        "2d0d",
-        "89f0"
-      ]
+      "events": []
+    },
+    {
+      "id": "be5a",
+      "name": "",
+      "email": "",
+      "pass": "",
+      "events": []
+    },
+    {
+      "id": "9a28",
+      "name": "",
+      "email": "",
+      "pass": "",
+      "events": []
+    },
+    {
+      "id": "4b9a",
+      "name": "Jatin Gandhi",
+      "email": "jatin@gmail",
+      "pass": "jatin",
+      "events": []
     }
   ],
   "organizations": [
@@ -36,58 +54,41 @@
       "name": "Amazon",
       "email": "am@gmail.com",
       "pass": "a123"
+    },
+    {
+      "id": "09d1",
+      "name": "",
+      "email": "",
+      "pass": ""
+    },
+    {
+      "id": "e5f8",
+      "name": "",
+      "email": "",
+      "pass": ""
+    },
+    {
+      "id": "cde5",
+      "name": "",
+      "email": "asdf",
+      "pass": ""
+    },
+    {
+      "id": "7d61",
+      "name": "Microsoft",
+      "email": "microsoft@gmail.com",
+      "pass": "mic"
     }
   ],
   "events": [
     {
-      "id": "2d0d",
-      "company": "Cognizant",
-      "eventName": "Charity Event",
-      "eventDate": "2024-01-19",
-      "location": "Hyderabad DLF",
-      "startTime": "14:23",
-      "endTime": "17:23",
-      "seats": 20
-    },
-    {
-      "id": "89f0",
-      "company": "Cognizant",
-      "eventName": "Playground",
-      "eventDate": "2024-01-18",
-      "location": "Chandigarh",
-      "startTime": "13:33",
-      "endTime": "15:33",
-      "seats": 15
-    },
-    {
-      "id": "8773",
-      "company": "Cognizant",
-      "eventName": "Football",
-      "eventDate": "2024-01-18",
-      "location": "Mohali",
-      "startTime": "13:34",
-      "endTime": "21:34",
-      "seats": 34
-    },
-    {
-      "id": "0ed9",
-      "company": "Cognizant",
-      "eventName": "cricket",
-      "eventDate": "2024-01-19",
-      "location": "pkl",
-      "startTime": "14:15",
-      "endTime": "16:15",
-      "seats": 15
-    },
-    {
-      "id": "7a89",
       "company": "",
-      "eventName": "event",
-      "eventDate": "2024-01-19",
-      "location": "blr",
-      "startTime": "08:24",
-      "endTime": "10:24",
-      "seats": 2
+      "eventName": "Cricket",
+      "eventDate": "2024-01-23",
+      "location": "Panchkula",
+      "startTime": "17:42",
+      "endTime": "20:42",
+      "id": "3854"
     }
   ]
 }

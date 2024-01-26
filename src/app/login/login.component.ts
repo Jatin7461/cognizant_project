@@ -1,6 +1,7 @@
 import { Component, OnInit, signal } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { NavigateService } from '../navigate.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -26,14 +27,14 @@ export class LoginComponent {
   //   this.signUpFlag = !this.signUpFlag;
   // }
 
-  showError= signal(false);
+  showError = signal(false);
 
   loginDetails = new FormGroup({
-    email: new FormControl('',Validators.required),
+    email: new FormControl('', Validators.required),
     pass: new FormControl(''),
   });
 
-  constructor(private navigateService: NavigateService) { }
+  constructor(private navigateService: NavigateService, private router: Router) { }
   ngOnInit(): void {
     this.signUpAs = this.navigateService.signUpAs
     this.signUpFlag = this.navigateService.signUpFlag
@@ -49,10 +50,14 @@ export class LoginComponent {
 
   }
 
-  onSignIn(){
-    let {email,pass} = this.loginDetails.value
-    
-    this.navigateService.onSignIn(email,pass);
+  onSignIn() {
+    let { email, pass } = this.loginDetails.value
+
+    this.navigateService.onSignIn(email, pass);
+  }
+
+  goToRegister() {
+    this.router.navigate(['register'])
   }
 
 }

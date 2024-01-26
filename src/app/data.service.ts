@@ -48,7 +48,7 @@ export class DataService {
 
   getUserWithId(id: any) {
     let url = `http://localhost:3000/users/${id}`;
-    console.log('getting user with id',id,'using the url',url)
+    console.log('getting user with id', id, 'using the url', url)
     return this.httpClient.get<any>(url);
   }
 
@@ -56,6 +56,23 @@ export class DataService {
     let url = `http://localhost:3000/users/${id}`;
 
     return this.httpClient.put(url, user)
+
+  }
+
+
+  deleteEventWithId(id: string) {
+
+    let url = `http://localhost:3000/events/${id}`;
+    return this.httpClient.delete(url);
+
+  }
+
+
+  updateEvent(id: string, event: any) {
+
+    let url = `http://localhost:3000/events/${id}`;
+    console.log('updating event with url', url)
+    return this.httpClient.put(url, event);
 
   }
 

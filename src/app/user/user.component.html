@@ -13,7 +13,8 @@
 
 
     <app-event [eventName]="event['eventName']" [date]="event['eventDate']" [startTime]="event['startTime']"
-        [endTime]="event['endTime']" [seats]="event['seats']" [id]="event['id']" [showJoinButton]=false></app-event>
+        [endTime]="event['endTime']" [seats]="event['seats']" [eventId]="event['id']" [showJoinButton]=false
+        [showRemoveButton]=true></app-event>
     }
     @empty{
     <p>No events to show.</p>

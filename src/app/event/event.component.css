@@ -4,5 +4,24 @@
     border-radius: 20px;
     color: white;
     /* width: 150px; */
+    
+}
+
+
+.red{
+    background-color: rgb(191, 35, 35);
+    border-radius: 20px;
+    color: white;
+
+}
+
+.d-flex{
+    justify-content: space-between;
+}
+
+.yellow{
+    background-color: rgb(202, 222, 51);
+    border-radius: 20px;
+    color: white;
 
 }

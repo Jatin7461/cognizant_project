@@ -6,11 +6,15 @@
 
     <div class="card-body">
         <h5 class="card-title">{{eventName}}</h5>
-        <h6 class="card-subtitle mt-3 text-muted">Location: Chandigarh</h6>
+        <h6 class="card-subtitle mt-3 text-muted">Location: {{location}}</h6>
         <h6 class="card-subtitle mt-3 text-muted">Event Date: {{date}}</h6>
         <h6 class="card-subtitle mt-3 text-muted">Timings: {{startTime}} - {{endTime}}</h6>
-  
-        <button class="btn mt-3 green" *ngIf="showJoinButton" (click)="joinEvent(eventId)">Join</button>
+  <div class="d-flex">
+
+      <button class="btn mt-3 green" *ngIf="showJoinButton" (click)="joinEvent(eventId)">Join</button>
+      <button class="btn mt-3 yellow" *ngIf="showEditButton" (click)="editEvent(eventId)">Edit</button>
+      <button class="btn mt-3 red" *ngIf="showRemoveButton" (click)="removeEvent(eventId)">Remove</button>
+    </div>
     </div>
 
 
